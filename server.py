@@ -7,6 +7,8 @@ app = Flask(__name__)
 def submit():
     data = request.json
 
+    print("NEW RESPONSE:", data)
+
     with open("responses.txt", "a") as f:
         f.write(json.dumps(data) + "\n")
 
@@ -22,3 +24,4 @@ def responses():
         return f.read()
 
 app.run(host="0.0.0.0", port=10000)
+
