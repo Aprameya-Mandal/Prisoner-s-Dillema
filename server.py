@@ -16,4 +16,9 @@ def submit():
 def home():
     return "Server running"
 
+@app.route("/responses")
+def responses():
+    with open("responses.txt", "r") as f:
+        return f.read()
+
 app.run(host="0.0.0.0", port=10000)
